@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 class SavedJobsViewModel: ObservableObject {
     @Published var jobs: [Job] = []

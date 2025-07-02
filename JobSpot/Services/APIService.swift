@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 class APIService: ObservableObject {
     func fetchJobs() async throws -> [Job] {
