@@ -1,11 +1,32 @@
 import SwiftUI
 
+class HomeViewModel: ObservableObject {
+    @Published var user: User? = nil
+    @Published var jobs: [Job] = []
+    @Published var isLoading = false
+    private let apiService = APIService()
+    
+    func fetchData() {
+        isLoading = true
+        Task {
+            let user = MockDataService.generateUser()
+            let jobs = try? await apiService.fetchJobs()
+            await MainActor.run {
+                self.user = user
+                self.jobs = jobs ?? []
+                self.isLoading = false
+            }
+        }
+    }
+}
+
 struct HomeView: View {
+    @StateObject private var viewModel = HomeViewModel()
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 HStack {
-                    Text("Hello, User")
+                    Text("Hello, \(viewModel.user?.name ?? "User")")
                         .font(.title2)
                         .fontWeight(.bold)
                     Spacer()
@@ -43,12 +64,20 @@ struct HomeView: View {
                         Button("See More") {}
                             .font(.subheadline)
                     }
-                    ForEach(0..<3) { _ in
-                        JobCardView()
+                    if viewModel.isLoading {
+                        ProgressView("Loading jobs...")
+                            .padding()
+                    } else {
+                        ForEach(viewModel.jobs.prefix(3)) { job in
+                            JobCardView(job: job)
+                        }
                     }
                 }
             }
             .padding()
+        }
+        .onAppear {
+            viewModel.fetchData()
         }
     }
 }
