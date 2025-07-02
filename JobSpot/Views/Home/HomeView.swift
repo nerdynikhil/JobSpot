@@ -122,9 +122,7 @@ struct HomeView: View {
                         GridItem(.flexible()),
                         GridItem(.flexible())
                     ], spacing: 12) {
-                        StatCard(title: "Remote Jobs", value: "44.5k", icon: "house.fill", color: .teal)
-                        StatCard(title: "Full Time", value: "66.8k", icon: "clock.fill", color: .purple)
-                        StatCard(title: "Part Time", value: "38.9k", icon: "calendar", color: .orange)
+                        // StatCards removed
                     }
                     
                     // Recent Jobs Section
@@ -151,7 +149,7 @@ struct HomeView: View {
                         } else {
                             LazyVStack(spacing: 12) {
                                 ForEach(viewModel.jobs.prefix(3)) { job in
-                                    JobCardView(job: job, jobManager: _jobManager)
+                                    JobCardView(job: job)
                                 }
                             }
                         }
@@ -169,42 +167,8 @@ struct HomeView: View {
     }
 }
 
-struct StatCard: View {
-    let title: String
-    let value: String
-    let icon: String
-    let color: Color
-    
-    var body: some View {
-        VStack(spacing: 8) {
-            ZStack {
-                Circle()
-                    .fill(color.opacity(0.2))
-                    .frame(width: 40, height: 40)
-                
-                Image(systemName: icon)
-                    .foregroundColor(color)
-                    .font(.system(size: 16, weight: .semibold))
-            }
-            
-            Text(value)
-                .font(.system(size: 16, weight: .bold, design: .rounded))
-                .foregroundColor(.primary)
-            
-            Text(title)
-                .font(.system(size: 12, weight: .medium))
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 16)
-        .background(Color(.systemBackground))
-        .cornerRadius(12)
-        .shadow(color: .black.opacity(0.05), radius: 2, x: 0, y: 1)
-    }
-}
-
 #Preview {
     HomeView()
         .environmentObject(JobManager())
 } 
+
