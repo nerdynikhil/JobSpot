@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 class CompanyGridViewModel: ObservableObject {
     @Published var companies: [Company] = []
