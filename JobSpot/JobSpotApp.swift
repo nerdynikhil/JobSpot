@@ -9,9 +9,24 @@ import SwiftUI
 
 @main
 struct JobSpotApp: App {
+    @StateObject private var authManager = AuthenticationManager()
+    @StateObject private var jobManager = JobManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if !authManager.hasSeenOnboarding {
+                OnboardingView()
+                    .environmentObject(authManager)
+                    .environmentObject(jobManager)
+            } else if !authManager.isAuthenticated {
+                LoginView()
+                    .environmentObject(authManager)
+                    .environmentObject(jobManager)
+            } else {
+                ContentView()
+                    .environmentObject(authManager)
+                    .environmentObject(jobManager)
+            }
         }
     }
 }

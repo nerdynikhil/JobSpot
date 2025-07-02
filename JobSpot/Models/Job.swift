@@ -7,7 +7,7 @@ enum JobType: String, Codable, CaseIterable {
     case contract = "Contract"
 }
 
-struct Job: Identifiable {
+struct Job: Identifiable, Equatable {
     let id: String
     let title: String
     let company: Company
@@ -18,4 +18,8 @@ struct Job: Identifiable {
     let requirements: [String]
     let isRemote: Bool
     let postedDate: Date
+    
+    static func == (lhs: Job, rhs: Job) -> Bool {
+        lhs.id == rhs.id
+    }
 } 

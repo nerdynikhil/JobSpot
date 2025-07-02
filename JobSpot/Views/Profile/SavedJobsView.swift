@@ -15,10 +15,21 @@ class SavedJobsViewModel: ObservableObject {
             }
         }
     }
+    
+    // Init for preview with mock data
+    init(jobs: [Job] = []) {
+        self.jobs = jobs
+    }
 }
 
 struct SavedJobsView: View {
-    @StateObject private var viewModel = SavedJobsViewModel()
+    @StateObject private var viewModel: SavedJobsViewModel
+    @EnvironmentObject var jobManager: JobManager
+    
+    init(viewModel: SavedJobsViewModel = SavedJobsViewModel()) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Saved Jobs")
@@ -43,5 +54,14 @@ struct SavedJobsView: View {
 }
 
 #Preview {
-    SavedJobsView()
-} 
+    let company = Company(id: "1", name: "Acme Corp", logo: "", followersCount: "100", isFollowing: false, description: "A company")
+    let mockJobs = [
+        Job(id: UUID().uuidString, title: "iOS Developer", company: company, location: "Remote", salary: "$120k", type: .fullTime, description: "Build iOS apps.", requirements: ["Swift", "SwiftUI"], isRemote: true, postedDate: Date()),
+        Job(id: UUID().uuidString, title: "Swift Engineer", company: company, location: "New York", salary: "$110k", type: .fullTime, description: "Work on Swift projects.", requirements: ["Swift"], isRemote: false, postedDate: Date()),
+        Job(id: UUID().uuidString, title: "Mobile Developer", company: company, location: "San Francisco", salary: "$115k", type: .fullTime, description: "Develop mobile apps.", requirements: ["Swift", "Kotlin"], isRemote: false, postedDate: Date()),
+        Job(id: UUID().uuidString, title: "UI/UX Designer", company: company, location: "London", salary: "$100k", type: .fullTime, description: "Design user interfaces.", requirements: ["Figma"], isRemote: false, postedDate: Date())
+    ]
+    let jobManager = JobManager()
+    return SavedJobsView(viewModel: SavedJobsViewModel(jobs: mockJobs))
+        .environmentObject(jobManager)
+}

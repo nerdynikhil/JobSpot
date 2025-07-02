@@ -1,0 +1,15 @@
+Task ID: 1
+Title: Build Static UI Structure
+Description: Create all SwiftUI view structures, implement static UI components, set up navigation, and apply design system.
+Status: pending
+Priority: high
+Details: Covers Splash, Login, Onboarding, Home, Jobs, Companies, Profile, Messaging screens. Set up Tab Bar and navigation patterns.
+Test Strategy: App launches and all screens are navigable with placeholder/static content.
+Subtasks:
+  1.1: Splash, Login, and Onboarding Views (pending)
+  1.2: Home Dashboard UI (pending)
+  1.3: Job Listings and Detail UI (pending)
+  1.4: Company Directory UI (pending)
+  1.5: Saved Jobs UI (pending)
+  1.6: User Profile UI (pending)
+  1.7: Messaging UI (pending) 

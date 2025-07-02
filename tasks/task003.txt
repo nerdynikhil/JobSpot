@@ -1,0 +1,12 @@
+Task ID: 3
+Title: Implement User Interactions
+Description: Add authentication, job saving/applying, company follow/unfollow, and profile editing.
+Status: pending
+Priority: high
+Details: Implement login/register, Google sign-in, job apply/save, company follow, and profile edit flows.
+Test Strategy: User can log in, save/apply to jobs, follow companies, and edit profile.
+Subtasks:
+  3.1: Authentication Flow (Login, Register, Google Sign-In) (pending)
+  3.2: Job Save/Apply Functionality (pending)
+  3.3: Company Follow/Unfollow (pending)
+  3.4: Profile Editing (pending) 

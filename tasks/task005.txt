@@ -1,0 +1,13 @@
+Task ID: 5
+Title: API Integration (Mock)
+Description: Implement and connect all mock API endpoints for authentication, jobs, companies, profile, and messaging.
+Status: pending
+Priority: medium
+Details: Set up endpoints as described in PRD. Ensure all async operations use async/await.
+Test Strategy: All features interact with mock API endpoints and handle responses/errors.
+Subtasks:
+  5.1: Authentication Endpoints (pending)
+  5.2: Jobs Endpoints (pending)
+  5.3: Companies Endpoints (pending)
+  5.4: Profile Endpoints (pending)
+  5.5: Messaging Endpoints (pending) 

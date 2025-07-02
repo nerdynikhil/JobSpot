@@ -8,31 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authManager: AuthenticationManager
+    @EnvironmentObject var jobManager: JobManager
+    
     var body: some View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house.fill")
+                    Image(systemName: "house")
                     Text("Home")
                 }
             JobListView()
                 .tabItem {
-                    Image(systemName: "briefcase.fill")
+                    Image(systemName: "briefcase")
                     Text("Jobs")
                 }
             CompanyGridView()
                 .tabItem {
-                    Image(systemName: "building.2.fill")
+                    Image(systemName: "building.2")
                     Text("Companies")
                 }
             MessagingView()
                 .tabItem {
-                    Image(systemName: "message.fill")
+                    Image(systemName: "message")
                     Text("Messages")
                 }
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person.fill")
+                    Image(systemName: "person")
                     Text("Profile")
                 }
         }
@@ -41,4 +44,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(AuthenticationManager())
+        .environmentObject(JobManager())
 }

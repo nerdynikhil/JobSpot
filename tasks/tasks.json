@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "title": "Build Static UI Structure",
+    "description": "Create all SwiftUI view structures, implement static UI components, set up navigation, and apply design system.",
+    "status": "pending",
+    "priority": "high",
+    "details": "Covers Splash, Login, Onboarding, Home, Jobs, Companies, Profile, Messaging screens. Set up Tab Bar and navigation patterns.",
+    "testStrategy": "App launches and all screens are navigable with placeholder/static content.",
+    "subtasks": [
+      { "id": "1.1", "title": "Splash, Login, and Onboarding Views", "status": "pending" },
+      { "id": "1.2", "title": "Home Dashboard UI", "status": "pending" },
+      { "id": "1.3", "title": "Job Listings and Detail UI", "status": "pending" },
+      { "id": "1.4", "title": "Company Directory UI", "status": "pending" },
+      { "id": "1.5", "title": "Saved Jobs UI", "status": "pending" },
+      { "id": "1.6", "title": "User Profile UI", "status": "pending" },
+      { "id": "1.7", "title": "Messaging UI", "status": "pending" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Integrate Mock Data and Models",
+    "description": "Create data models, implement mock data service, connect views to mock data, and add async/await API calls.",
+    "status": "pending",
+    "priority": "high",
+    "details": "Implement User, Job, Company, and Message models. Use MockDataService and APIService with async/await.",
+    "testStrategy": "Views display mock data with simulated network delay.",
+    "subtasks": [
+      { "id": "2.1", "title": "Define Data Models (User, Job, Company, Message)", "status": "pending" },
+      { "id": "2.2", "title": "Implement MockDataService and APIService", "status": "pending" },
+      { "id": "2.3", "title": "Connect Views to Mock Data", "status": "pending" },
+      { "id": "2.4", "title": "Add Async/Await API Calls", "status": "pending" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Implement User Interactions",
+    "description": "Add authentication, job saving/applying, company follow/unfollow, and profile editing.",
+    "status": "pending",
+    "priority": "high",
+    "details": "Implement login/register, Google sign-in, job apply/save, company follow, and profile edit flows.",
+    "testStrategy": "User can log in, save/apply to jobs, follow companies, and edit profile.",
+    "subtasks": [
+      { "id": "3.1", "title": "Authentication Flow (Login, Register, Google Sign-In)", "status": "pending" },
+      { "id": "3.2", "title": "Job Save/Apply Functionality", "status": "pending" },
+      { "id": "3.3", "title": "Company Follow/Unfollow", "status": "pending" },
+      { "id": "3.4", "title": "Profile Editing", "status": "pending" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Polish & Enhancement",
+    "description": "Add loading states, error handling, animations, accessibility, and performance optimizations.",
+    "status": "pending",
+    "priority": "medium",
+    "details": "Implement loading indicators, error messages, smooth transitions, accessibility features, and optimize performance.",
+    "testStrategy": "App is smooth, accessible, and handles errors gracefully.",
+    "subtasks": [
+      { "id": "4.1", "title": "Loading States & Error Handling", "status": "pending" },
+      { "id": "4.2", "title": "Animations & Transitions", "status": "pending" },
+      { "id": "4.3", "title": "Accessibility Improvements", "status": "pending" },
+      { "id": "4.4", "title": "Performance Optimization", "status": "pending" }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "API Integration (Mock)",
+    "description": "Implement and connect all mock API endpoints for authentication, jobs, companies, profile, and messaging.",
+    "status": "pending",
+    "priority": "medium",
+    "details": "Set up endpoints as described in PRD. Ensure all async operations use async/await.",
+    "testStrategy": "All features interact with mock API endpoints and handle responses/errors.",
+    "subtasks": [
+      { "id": "5.1", "title": "Authentication Endpoints", "status": "pending" },
+      { "id": "5.2", "title": "Jobs Endpoints", "status": "pending" },
+      { "id": "5.3", "title": "Companies Endpoints", "status": "pending" },
+      { "id": "5.4", "title": "Profile Endpoints", "status": "pending" },
+      { "id": "5.5", "title": "Messaging Endpoints", "status": "pending" }
+    ]
+  }
+] 

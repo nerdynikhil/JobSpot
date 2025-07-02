@@ -26,6 +26,7 @@ class JobListViewModel: ObservableObject {
 
 struct JobListView: View {
     @StateObject private var viewModel = JobListViewModel()
+    @EnvironmentObject var jobManager: JobManager
     
     var body: some View {
         VStack {

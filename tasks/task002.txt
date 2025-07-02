@@ -1,0 +1,12 @@
+Task ID: 2
+Title: Integrate Mock Data and Models
+Description: Create data models, implement mock data service, connect views to mock data, and add async/await API calls.
+Status: pending
+Priority: high
+Details: Implement User, Job, Company, and Message models. Use MockDataService and APIService with async/await.
+Test Strategy: Views display mock data with simulated network delay.
+Subtasks:
+  2.1: Define Data Models (User, Job, Company, Message) (pending)
+  2.2: Implement MockDataService and APIService (pending)
+  2.3: Connect Views to Mock Data (pending)
+  2.4: Add Async/Await API Calls (pending) 
