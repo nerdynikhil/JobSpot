@@ -14,19 +14,9 @@ struct JobSpotApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if !authManager.hasSeenOnboarding {
-                OnboardingView()
-                    .environmentObject(authManager)
-                    .environmentObject(jobManager)
-            } else if !authManager.isAuthenticated {
-                LoginView()
-                    .environmentObject(authManager)
-                    .environmentObject(jobManager)
-            } else {
-                ContentView()
-                    .environmentObject(authManager)
-                    .environmentObject(jobManager)
-            }
+            SplashView()
+                .environmentObject(authManager)
+                .environmentObject(jobManager)
         }
     }
 }
