@@ -6,10 +6,18 @@ struct JobCardView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.gray.opacity(0.3))
-                .frame(width: 48, height: 48)
-                .overlay(Text(job.company.name.prefix(1)).font(.caption))
+            ZStack {
+                Circle()
+                    .fill(LinearGradient(
+                        gradient: Gradient(colors: [Color.blue, Color.purple]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+                    .frame(width: 48, height: 48)
+                Text(job.company.name.prefix(1))
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+            }
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(job.title)
